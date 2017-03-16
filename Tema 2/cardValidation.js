@@ -1,7 +1,7 @@
 function validationCard(cardNumber){
     
     var str = cardNumber;
-    var numbers = str.replace(/-/g,"");
+    var numbers = str.replace(/-/g , "");
     
     var resultado = {valid:true, CardID:cardNumber, error:"sin errores"};
     
