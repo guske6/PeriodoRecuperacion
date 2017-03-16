@@ -1,0 +1,35 @@
+<html>
+    
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<style type="text/css">
+
+        
+    p{
+        display: inline-block;
+    }
+    
+    div{
+        display: inline-block;
+    }
+
+</style>    
+</head>
+    
+<body>
+    <div><p id="errors"></p></div>
+    <div><p>Longitud: </p> <p id="longitud"></p></div>
+    <br>
+    <div><p>Latitud: </p> <p id="latitud"></p></div>
+    <br>
+    <button onclick="getLocation()">Get Location</button>
+    <br>
+    <div id="map"></div>
+        
+    <script type:"text/javascript" src="geolocation.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQEqMymjoXze2bH4FcyQS0z8DS1c-tXbg&signed_in=true&callback=initMap"
+    async defer>
+</script>
+</body>
+    
+</html>
