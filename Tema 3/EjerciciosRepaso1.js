@@ -18,15 +18,38 @@ function multiplica(arr){
     return total;
 }
 
+// function to reverse a word
+
 function inviertepalabra(palabra){
-    var len = palabra.lenght;
+    var len = palabra.length;
+    var npalabra= palabra.split("");
     var ultima = len-1;
     var aux = "";
     
     for (i=0; i<len/2; i++){
-        aux = palabra[i];
-        palabra[i]=ultima-i;
-        palabra[ultima-i]=aux;
+        aux = npalabra[i];
+        npalabra[i] = npalabra[ultima-i];
+        npalabra[ultima-i] = aux;
     }
-    return palabra;
+    return npalabra.join("");
+}
+
+//function to reverse a phrase
+
+function inviertefrase(frase){
+    var nfrase = frase.split(" ");
+    var len = nfrase.length;
+    var ultima = len-1;
+    var auxf = "";
+    
+    for (j=0; j<len; j++){
+        nfrase[j] = inviertepalabra(nfrase[j]);
+    }
+    
+    for (k=0; k<len/2; k++){
+        auxf = nfrase[k];
+        nfrase[k] = nfrase[ultima-k];
+        nfrase[ultima-k] = auxf;
+    }
+    return nfrase.join(" ");
 }
