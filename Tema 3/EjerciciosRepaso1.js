@@ -53,3 +53,31 @@ function inviertefrase(frase){
     }
     return nfrase.join(" ");
 }
+
+//function to search the longest word in an array
+
+function encuentraPalabraMayor(palabras){
+    var len = palabras.length;
+    var mayor = "";
+    
+    for (i=0; i<len; i++){
+        if (palabras[i].length > mayor.length){
+            mayor = palabras[i];
+        }
+    }
+    return mayor + "  es la palabra mayor";
+}
+
+// funcion para filtar las palabras con mayor longitud que i
+
+function filtraPalabrasMayores(palabras, i){
+    var len = palabras.length;
+    var mayores = [];
+    
+    for (j=0; j<len; j++){
+        if (palabras[j].length > i){
+            mayores.push(palabras[j]);
+        }
+    }
+    return mayores;
+}
