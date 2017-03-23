@@ -8,7 +8,7 @@ class Contacto {
     
     muestraContacto(){
         
-        return "nombre: " + this.nombre + "dirección" + this.direccion + "telefono" + this.telefono + "email" + this.email;
+        return "nombre: " + this.nombre + "\n direccion: " + this.direccion + "\n telefono: " + this.telefono + "\n email: " + this.email;
     }
 }
 
@@ -22,20 +22,30 @@ class Agenda {
     }
     
     mostrarContacto(nombuscar){
-        for (i=0; i<this.listaContactos.length; i++){
+        for (var i=0; i<this.listaContactos.length; i++){
             if (this.listaContactos[i].nombre == nombuscar){
-                this.listaContactos[i].muestraContacto();
+                return this.listaContactos[i].muestraContacto();
             }
         }
     }
     
     mostrarTodos(){
-        //
+        for (var i=0; i<this.listaContactos.length; i++){
+                console.log(this.listaContactos[i].muestraContacto());
+        }
     }
     
-    borrarContacto(){
-        //
+    borrarContacto(nombuscar){
+        for (var i=0; i<this.listaContactos.length; i++){
+            if (this.listaContactos[i].nombre == nombuscar){
+                this.listaContactos.splice(i, 1);
+                agenda.mostrarTodos();
+            }
+        }
     }
 }
 
 agenda = new Agenda;
+agenda.introducirContacto("juan", "granada", 6763456476, "juan@hotmail.com");
+agenda.introducirContacto("gustavo", "granada", 7676846476, "guske6@hotmail.com");
+agenda.introducirContacto("manolo", "granada", 986756476, "manolo@hotmail.com");
