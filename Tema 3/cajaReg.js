@@ -1,4 +1,4 @@
-class Empleado {
+class Empleado{
     constructor (id, nombre, direccion, descuento) {
         this.id = id;
         this.nombre = nombre;
