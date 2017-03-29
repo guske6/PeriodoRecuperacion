@@ -32,6 +32,7 @@ class CajaRegistradora {
         this.listaProductos = [];
         this.activa = false;
         this.empactivo = "";
+        this.empactdesc = 0;
         this.total = 0;
         this.cuentaActiva = false;
     }
@@ -69,6 +70,7 @@ class CajaRegistradora {
             if (this.listaEmpleados[i].id == ident){
                 this.activa = true;
                 this.empactivo = this.listaEmpleados[i].nombre;
+                this.empactdesc = this.listaEmpleados[i].descuento;
                 console.log("El empleado " + this.empactivo + " se ha registrado ");
             }
         }
@@ -102,7 +104,9 @@ class CajaRegistradora {
     
     finalizarCuenta(){
         this.cuentaActiva = false;
+        this.total = this.total - (this.total * (this.empactdesc/100));
         console.log("\n La cuenta es de: " + this.total + "€");
+        console.log("\n Le atendió: " + this.empactivo + " con un descuento de: " + this.empactdesc + "%");
         this.total = 0;
     }
 }
