@@ -1,0 +1,50 @@
+<html>
+<head>
+    <style type="text/css">
+        .list2{
+            list-style: square;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="intro">Test</h1>
+    <p class="intro">This is a test exercice</p>
+    <p>This content must hide</p>
+    <button type="button" onclick="hideElements()">Hide/Show content</button> 
+    
+    <h2>List 1:</h2>
+    
+    <ol>
+        <li>omelette</li>
+        <li>ham</li>
+        <li>cheese</li>
+    </ol>
+    
+    <h2>List 2:</h2>
+    
+    <ol>
+        <li class="list2">Coca Cola</li>
+        <li class="list2">Milk</li>
+        <li class="list2">Tea</li>
+    </ol>
+
+    
+<script type="text/javascript" 
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.
+4.0/jquery.min.js?ver=1.4.0"></script> 
+
+<script>
+    function hideElements(){
+        //$("h1").hide("slow"); //Exercise 1. Hide all.
+        //$("p").hide("slow"); //Exercise 1. Hide all.
+        //$("button").hide("slow"); //Exercise 2. Hide the button.
+        //$(".intro").hide("slow"); //Exercise 3. Hide only the elements with class intro.
+        //$("p.intro").hide("slow"); //Exercise 4. Hide the paragraph with class intro. 
+        //$("li:first").hide("slow"); //Exercise 5. Hide the first list element of the list 1.
+        $("li:first-child").toggle("slow"); //Exercise 6. Hide the first element of each list.
+    }
+
+</script>
+    
+</body>
+</html>
